@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuxeBuy – Customer Support</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="app">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>LuxeBuy</h2>
+        <p>Customer Support</p>
+
+        <div class="help-items">
+            <div class="help-item" onclick="showContent('order')">
+                <div class="help-icon order-icon">📦</div>
+                <div class="help-text">
+                    <h3>Order Status</h3>
+                    <p>Track your package in real-time</p>
+                </div>
+            </div>
+
+            <div class="help-item" onclick="showContent('return')">
+                <div class="help-icon return-icon">🔄</div>
+                <div class="help-text">
+                    <h3>Returns & Refunds Policy</h3>
+                    <p>Easy returns within 30 days</p>
+                </div>
+            </div>
+
+            <div class="help-item" onclick="showContent('shipping')">
+                <div class="help-icon shipping-icon">🚚</div>
+                <div class="help-text">
+                    <h3>Shipping Info</h3>
+                    <p>Delivery times & tracking</p>
+                </div>
+            </div>
+
+            <div class="help-item" onclick="showContent('payment')">
+                <div class="help-icon payment-icon">💳</div>
+                <div class="help-text">
+                    <h3>Payment Issues</h3>
+                    <p>Resolve billing problems</p>
+                </div>
+            </div>
+
+            <div class="help-item" onclick="showContent('account')">
+                <div class="help-icon account-icon">👤</div>
+                <div class="help-text">
+                    <h3>Account Help</h3>
+                    <p>Manage profile & security</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Robot Button -->
+        <div class="robot-btn" onclick="openChat()">
+            🤖 Chat with Me
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="content">
+        <h1>Welcome to LuxeBuy Support</h1>
+        <p>
+            We're here to make your shopping experience smooth and stress-free.
+            Choose a topic from the left or chat with our assistant.
+        </p>
+
+        <div id="dummyText" class="content-card">
+            <h2>👋 Getting Started</h2>
+            <p>Select any option from the sidebar to explore detailed help topics.</p>
+            <p>Or click the "Chat with Me" button below to get instant help.</p>
+
+            <h3 style="margin-top: 24px;">💡 Quick Tips:</h3>
+            <ul>
+                <li>Have your order number ready</li>
+                <li>Check your email for confirmations</li>
+                <li>Use 24/7 chat for urgent issues</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Chat Panel -->
+    <div id="chatPanel" class="chat-panel">
+        <div class="chat-header">
+            <div class="assistant-info">
+                <div class="assistant-avatar">SC</div>
+                <div>
+                    <strong>LuxeBuy Assistant</strong>
+                    <div class="assistant-status">
+                        <div class="status-dot"></div>
+                        <span>Online • Ready to help</span>
+                    </div>
+                </div>
+            </div>
+            <span class="close-btn" onclick="closeChat()">✕</span>
+        </div>
+
+        <div id="chat-box" class="chat-body">
+            <div class="bot-msg">
+                Hello 👋 Welcome to LuxeBuy support! How can I assist you today?
+            </div>
+        </div>
+
+        <div class="chat-footer">
+            <input id="user-input" type="text" placeholder="Type your message here..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</div>
+<script>
+function selectItem(itemName) {
+    const input = document.getElementById("user-input"); // your input box id
+    input.value = itemName;
+    sendMessage(); // existing function that sends message
+}
+</script>
+
+
+<script src="/static/chat.js"></script>
+
+</body>
+</html>
